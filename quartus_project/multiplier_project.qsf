@@ -1,0 +1,49 @@
+# Quartus Settings File
+# Auto-generated for ENCS3310 Fast Multiplier Project
+
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE115F29C7
+set_global_assignment -name TOP_LEVEL_ENTITY multiplier_rca
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "2026"
+set_global_assignment -name LAST_QUARTUS_VERSION 13.0
+
+# Source files — add ALL in correct dependency order
+set_global_assignment -name VERILOG_FILE gate_lib.v
+set_global_assignment -name VERILOG_FILE dff.v
+set_global_assignment -name VERILOG_FILE dff_cla.v
+set_global_assignment -name VERILOG_FILE full_adder.v
+set_global_assignment -name VERILOG_FILE rca_4bit.v
+set_global_assignment -name VERILOG_FILE cla_4bit.v
+set_global_assignment -name VERILOG_FILE multiplier_rca.v
+set_global_assignment -name VERILOG_FILE multiplier_cla.v
+set_global_assignment -name VERILOG_FILE full_adder_buggy.v
+set_global_assignment -name VERILOG_FILE rca_4bit_buggy.v
+set_global_assignment -name VERILOG_FILE multiplier_rca_buggy.v
+
+# Testbenches (for ModelSim simulation inside Quartus)
+set_global_assignment -name VERILOG_FILE tb_multiplier_rca.v
+set_global_assignment -name VERILOG_FILE tb_multiplier_cla.v
+set_global_assignment -name VERILOG_FILE tb_error_detection.v
+
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH tb_rca -section_id eda_simulation
+
+set_global_assignment -name EDA_TEST_BENCH_NAME tb_rca -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME uut -section_id tb_rca
+set_global_assignment -name EDA_TEST_BENCH_FILE tb_multiplier_rca.v -section_id tb_rca
+
+set_global_assignment -name EDA_TEST_BENCH_NAME tb_cla -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME uut -section_id tb_cla
+set_global_assignment -name EDA_TEST_BENCH_FILE tb_multiplier_cla.v -section_id tb_cla
+
+set_global_assignment -name EDA_TEST_BENCH_NAME tb_err -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME uut -section_id tb_err
+set_global_assignment -name EDA_TEST_BENCH_FILE tb_error_detection.v -section_id tb_err
+
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
